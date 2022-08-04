@@ -3,7 +3,32 @@ layout: page
 permalink: /404.html
 title: "Page not found"
 description: "Looks like there has been a mistake. Nothing exists here."
-redirect: true
+redirect: false
 ---
+<!DOCTYPE html>
+<html>
 
-<p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="{{ site.baseurl }}/">here</a>.</p>
+<head>
+    <meta charset="utf-8">
+    <title>Error 404 :(</title>
+
+    <script>
+        window.onload = function () {
+            const destination = window.location.href;
+            if (window.location.href.includes("krishols.github.io/designer")) {
+                const redirectLocation = window.location.href.replace(
+                    "krishols.github.io/designer",
+                    "designer-edu.github.io"
+                );
+                document.getElementById("body").innerHTML = "Designer has moved into an organization repository!<br/><br/>Redirecting to " + redirectLocation + " ...";
+                window.location.href = redirectLocation;
+            }
+        }
+    </script>
+</head>
+
+<body id="body" style="text-align: center">
+    Page not found
+</body>
+
+</html>
